@@ -1,38 +1,191 @@
-.App {
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.after-ball-img::after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: -134px;
+    right: -144px;
+    background: url('./assets/images/pokeball.png') no-repeat;
+    width: 318px;
+    height: 323px;
+    background-size: cover;
+    transform: rotate(-31deg);
+    z-index: -1;
+    animation-name: spin;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.after-dots-img::after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 27px;
+    left: 36%;
+    background: url(https://raw.githubusercontent.com/Mitesh2499/PokedexApp/master/src/assets/Images/dots.png) no-repeat;
+    width: 168px;
+    height: 100px;
+    z-index: -1;
+    opacity: 0.05;
+    transform: rotate(-32deg);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.clip-path-bg{
+    z-index: -1;
+    position: absolute;
+    background-color: #EB544D;
+    width: 100%;
+    height: 600px;
+    top: -290px;
+    left: -14%;
+    transform: rotate(-116deg);
+    box-shadow: 0 20px 25px -5px rgb(87 87 87 / 39%), 0 8px 10px -6px rgb(34 31 31);
+}
+.after-ball-pokemon::after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 100px;
+    right: 53px;
+    background: url('./assets/images/pokeball.png') no-repeat;
+    width: 251px;
+    height: 255px;
+    background-size: cover;
+    transform: rotate(-31deg);
+    z-index: -1;
+    animation-name: spin;
+    animation-duration: 7000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.after-right-arrow::after {
+    z-index: 1;
+    content: '';
+    position: absolute;
+    display: block;
+    top: 53%;
+    left: 45%;
+    background: url('./assets/images/right-arrow.png') no-repeat;
+    width: 30px;
+    height: 25px;
+    background-size: cover;
+    opacity: 0.4;
+}
+.after-right-arrow-mega::after {
+    z-index: 1;
+    content: '';
+    position: absolute;
+    display: block;
+    background: url('./assets/images/right-arrow.png') no-repeat;
+    width: 30px;
+    height: 25px;
+    background-size: cover;
+    opacity: 0.4;
+    bottom: -29px;
+    left: 43px;
+    transform: rotate(90deg);
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.after-arrow-mega::after {
+    z-index: 1;
+    content: '';
+    position: absolute;
+    display: block;
+    background: url('./assets/images/right-arrow.png') no-repeat;
+    width: 30px;
+    height: 25px;
+    background-size: cover;
+    opacity: 0.4;
+    bottom: -23px;
+    right: -28px;
+    transform: rotate(45deg);
+}
+.after-arrow-mega::before {
+    z-index: 1;
+    content: '';
+    position: absolute;
+    display: block;
+    background: url('./assets/images/right-arrow.png') no-repeat;
+    width: 30px;
+    height: 25px;
+    background-size: cover;
+    opacity: 0.4;
+    bottom: -26px;
+    left: -25px;
+    transform: rotate(135deg);
+}
+.after-light-stats::after{
+    content:'';
+    display: block;
+    position: absolute;
+    background-color: #000;
+    width: 1px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    /* transform: rotate(-116deg); */
+}
+.electric{
+    clip-path: polygon(37% 2%,71% 1%,52% 38%,70% 38%,16% 95%,36% 48%,14% 48%);
+    background-color: #F7CE55;
+    width: 585px;
+    height: 650px;
+    position: absolute;
+    top: -70px;
+    left: -29px;
+    z-index: -1;
+    transform: rotate(18deg);
 }
 
-.App-link {
-  color: #61dafb;
+
+.ice-clip-path{
+    clip-path: ellipse(50% 50% at 50% 50%);
+    background: #81C9FC;
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.ice-after::after{
+    /* content: "";
+    display: inline-block;
+    background:url('./assets/images/snowflakes.png') no-repeat;
+    position: absolute;
+    background-size: cover;
+    z-index: -1;
+    width: 400px;
+    height: 400px;
+    opacity: 0.23;
+    top: -147px;
+    right: -148px; */
+}
+.ice-after::before{
+    /* content: "";
+    display: inline-block;
+    background:url('./assets/images/snowflakes.png') no-repeat;
+    position: absolute;
+    background-size: cover;
+    z-index: -1;
+    width: 400px;
+    height: 400px;
+    opacity: 0.23;
+    bottom: -147px;
+    left: -148px; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
