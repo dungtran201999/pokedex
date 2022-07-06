@@ -1,21 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import {useParams} from "react-router-dom";
-import { getInfoPokemon,getEvolutionPokemon,getPokemonSpecies } from '../../helpers/utils';
+import { getInfoPokemon,getPokemonSpecies } from '../../helpers/utils';
 import Thumbnail from './components/Thumbnail';
 import InfoPokemon from './components/InfoPokemon';
 import StatsPokemon from './components/StatsPokemon';
 import EvolutionMega from './components/EvolutionMega';
 import Evolution from './components/Evolution';
+import Loading from '../../components/Loading';
 
 const PokemonDetail=()=>{
     const { id } = useParams();
     const [dataInfoPk,setDataInfoPK]=useState([])
     const [dataSpecies,setDataSpecies]=useState([])
+
     useEffect(async()=>{
         const [infoPK,species] = await Promise.all([getInfoPokemon(id),getPokemonSpecies(id)])
         setDataInfoPK(infoPK)
         setDataSpecies(species)
     },[])
+    // console.log(dataInfoPk.length);
+    if(dataInfoPk.length===0) return <Loading />;
+
     //EB544D
     return (
         <div className="p-5 overflow-hidden ">

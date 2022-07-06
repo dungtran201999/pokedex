@@ -2,7 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
+#root{
+    max-width: 390px;
+    margin: auto;
+    border: 1px solid #ebebeb;
+}
 .after-ball-img::after {
     content: '';
     position: absolute;
